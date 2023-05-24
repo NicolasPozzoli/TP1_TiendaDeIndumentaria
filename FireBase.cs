@@ -35,14 +35,20 @@ namespace TiendaVirtualDeIndumentaria
 
             public async Task<FirebaseResponse> IngresarCliente(Cliente client)
             {
+
                 string IdGenerado = Guid.NewGuid().ToString("N");
+
+
+
                 return await Client.SetAsync("Usuario/" + IdGenerado, client);
             }
 
             public  async Task<FirebaseResponse> IngresarProducto(Producto product)
             {
+
                 try
                 {
+
                     string IdGenerado = Guid.NewGuid().ToString("N");
                     return await Client.SetAsync("productos/" + IdGenerado, product);
                 }
@@ -51,6 +57,19 @@ namespace TiendaVirtualDeIndumentaria
                     throw new Exception(ex.Message);
                 }
             }
+
+        public async Task<FirebaseResponse> ActualizarStockProducto(Producto product,string id,int stock)
+        {
+            try
+            {
+                product.Stock=stock;
+                return await Client.UpdateAsync("productos/" + id, product);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public async Task reponerStock(int stock)
         {
             //await Client.UpdateAsync($"productos\\{id}\\Stock", stock);
@@ -65,56 +84,6 @@ namespace TiendaVirtualDeIndumentaria
 
     }
 
-        //private static readonly IFirebaseConfig Config = new FirebaseConfig
-        //{
-        //    AuthSecret = "snuLFpLpLUZwfO9H0hNjiTxLTkLnAA44fIMHKIz8",
-        //    BasePath = "https://tp1utn-default-rtdb.firebaseio.com/"
-        //};
-
-        //public static readonly FirebaseClient client;
-
-        //static IngresoUsuario()
-        //{
-        //    client = new FirebaseClient(Config);
-        //}
-
-
-        //public async Task CargarUsuarioEnFirebase(string usuario,string psw)
-        //{
-        //    DocumentReference documentReference = client.Collection("Usuarios").Document(usuario);
-        //        var user = new Cliente()
-        //        {
-        //            Usuario = usuario,
-        //            Contrasenia = psw,
-        //           // IdCliente = "01",
-        //        };
-        //        await documentReference.SetAsync(user);
-
-
-        //}
-
-
-
-        //public async Task<Dictionary<string,Cliente >>ObtenerUsuariosDeFirebase()
-        //{
-        //    FirebaseResponse response = await client.GetAsync("Usuarios");
-        //    return response.ResultAs<Dictionary<string,Cliente>>();
-        //}
-
-
-
-        //public async Task CargarUsuarioEnFirebase(Cliente cliente)
-        //{
-        //    DocumentReference documentReference = client.Collection("Usuarios").Document(cliente.Usuario);
-        //    Cliente usuario = new()
-        //    {
-        //        Usuario = cliente.Usuario,
-        //        Contrasenia = cliente.Contrasenia,
-        //        IdCliente = cliente.IdCliente,
-        //    };
-        //    await documentReference.SetAsync(usuario);
-
-        //     FirebaseResponse response = await client.("Usuarios/" + cliente.Usuario, cliente);  
-        //}
+    
     }
 

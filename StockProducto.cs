@@ -46,9 +46,8 @@ namespace TiendaVirtualDeIndumentaria
                                 if (elemento.Key == id)
                                 {
 
-                                    await producto.reponerStock(stock);
-
-                                    MessageBox.Show($"stock antiguo: {elemento.Value.Stock}  stock nuevo: {stock}");
+                                    await producto.ActualizarStockProducto(elemento.Value,id,stock);
+                          
                                     //elemento.Value.Stock=stock;
                                     //MessageBox.Show($"stock : {elemento.Value.Stock}");
                                    
@@ -63,7 +62,7 @@ namespace TiendaVirtualDeIndumentaria
                         MessageBox.Show(ex.Message);
                     }
 
-                    MessageBox.Show("Producto eliminado correctamente. Presione Ver datos para actualizar.");
+                    MessageBox.Show("Stock actualizado correctamente. Presione Ver datos para actualizar.");
                 }
 
             }

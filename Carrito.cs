@@ -1,27 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TiendaVirtualDeIndumentaria
 {
-    internal class Carrito
+    public partial class Carrito : Form
     {
-        public Carrito() 
+        public Carrito()
         {
-            Dictionary<string, int> productos = new Dictionary<string, int>();
-            productos.Add("Buzo 1",2);
-            productos.Add("Buzo 2", 2);
-            productos.Add("Buzo 3", 2);
-            productos.Add("Buzo 4", 2);
-            productos.Add("Buzo 5", 2);
-            productos.Add("Buzo 6", 2);
+            InitializeComponent();
+        }
 
-
+        private void Carrito_Load(object sender, EventArgs e)
+        {
 
         }
 
+        private void comprar1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             panel_menu = new Panel();
             button12 = new Button();
             button11 = new Button();
@@ -42,28 +43,28 @@
             btn_buzos = new Button();
             panel_logo = new Panel();
             lbl_stock = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
             label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button9 = new Button();
-            button10 = new Button();
+            comprar8 = new Button();
+            comprar7 = new Button();
+            comprar6 = new Button();
+            comprar5 = new Button();
+            comprar4 = new Button();
+            comprar3 = new Button();
+            comprar2 = new Button();
+            comprar1 = new Button();
             label8 = new Label();
             pictureBox8 = new PictureBox();
             label7 = new Label();
             pictureBox7 = new PictureBox();
-            label6 = new Label();
             label5 = new Label();
+            label6 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
@@ -72,8 +73,9 @@
             pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            button3 = new Button();
             panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -81,8 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel_menu
@@ -276,41 +278,41 @@
             lbl_stock.Size = new Size(0, 20);
             lbl_stock.TabIndex = 65;
             // 
-            // label13
+            // label16
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(1435, 853);
-            label13.Name = "label13";
-            label13.Size = new Size(0, 20);
-            label13.TabIndex = 64;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(1116, 853);
-            label14.Name = "label14";
-            label14.Size = new Size(0, 20);
-            label14.TabIndex = 63;
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(1435, 853);
+            label16.Name = "label16";
+            label16.Size = new Size(0, 20);
+            label16.TabIndex = 64;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(802, 853);
+            label15.Location = new Point(1116, 853);
             label15.Name = "label15";
             label15.Size = new Size(0, 20);
-            label15.TabIndex = 62;
+            label15.TabIndex = 63;
             // 
-            // label16
+            // label14
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(478, 853);
-            label16.Name = "label16";
-            label16.Size = new Size(0, 20);
-            label16.TabIndex = 61;
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(802, 853);
+            label14.Name = "label14";
+            label14.Size = new Size(0, 20);
+            label14.TabIndex = 62;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI Historic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(478, 853);
+            label13.Name = "label13";
+            label13.Size = new Size(0, 20);
+            label13.TabIndex = 61;
             // 
             // label12
             // 
@@ -348,93 +350,101 @@
             label9.Size = new Size(0, 20);
             label9.TabIndex = 57;
             // 
-            // button5
+            // comprar8
             // 
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(1420, 893);
-            button5.Name = "button5";
-            button5.Size = new Size(106, 29);
-            button5.TabIndex = 56;
-            button5.Text = "Comprar";
-            button5.UseVisualStyleBackColor = true;
+            comprar8.FlatStyle = FlatStyle.Flat;
+            comprar8.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar8.Location = new Point(1420, 893);
+            comprar8.Name = "comprar8";
+            comprar8.Size = new Size(106, 29);
+            comprar8.TabIndex = 56;
+            comprar8.Text = "Comprar";
+            comprar8.UseVisualStyleBackColor = true;
+            comprar8.Click += comprar8_Click;
             // 
-            // button6
+            // comprar7
             // 
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(1099, 893);
-            button6.Name = "button6";
-            button6.Size = new Size(106, 29);
-            button6.TabIndex = 55;
-            button6.Text = "Comprar";
-            button6.UseVisualStyleBackColor = true;
+            comprar7.FlatStyle = FlatStyle.Flat;
+            comprar7.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar7.Location = new Point(1099, 893);
+            comprar7.Name = "comprar7";
+            comprar7.Size = new Size(106, 29);
+            comprar7.TabIndex = 55;
+            comprar7.Text = "Comprar";
+            comprar7.UseVisualStyleBackColor = true;
+            comprar7.Click += comprar7_Click;
             // 
-            // button7
+            // comprar6
             // 
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(783, 893);
-            button7.Name = "button7";
-            button7.Size = new Size(106, 29);
-            button7.TabIndex = 54;
-            button7.Text = "Comprar";
-            button7.UseVisualStyleBackColor = true;
+            comprar6.FlatStyle = FlatStyle.Flat;
+            comprar6.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar6.Location = new Point(783, 893);
+            comprar6.Name = "comprar6";
+            comprar6.Size = new Size(106, 29);
+            comprar6.TabIndex = 54;
+            comprar6.Text = "Comprar";
+            comprar6.UseVisualStyleBackColor = true;
+            comprar6.Click += comprar6_Click;
             // 
-            // button8
+            // comprar5
             // 
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.Location = new Point(464, 893);
-            button8.Name = "button8";
-            button8.Size = new Size(106, 29);
-            button8.TabIndex = 53;
-            button8.Text = "Comprar";
-            button8.UseVisualStyleBackColor = true;
+            comprar5.FlatStyle = FlatStyle.Flat;
+            comprar5.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar5.Location = new Point(464, 893);
+            comprar5.Name = "comprar5";
+            comprar5.Size = new Size(106, 29);
+            comprar5.TabIndex = 53;
+            comprar5.Text = "Comprar";
+            comprar5.UseVisualStyleBackColor = true;
+            comprar5.Click += comprar5_Click;
             // 
-            // button4
+            // comprar4
             // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(1420, 456);
-            button4.Name = "button4";
-            button4.Size = new Size(106, 29);
-            button4.TabIndex = 52;
-            button4.Text = "Comprar";
-            button4.UseVisualStyleBackColor = true;
+            comprar4.FlatStyle = FlatStyle.Flat;
+            comprar4.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar4.Location = new Point(1420, 456);
+            comprar4.Name = "comprar4";
+            comprar4.Size = new Size(106, 29);
+            comprar4.TabIndex = 52;
+            comprar4.Text = "Comprar";
+            comprar4.UseVisualStyleBackColor = true;
+            comprar4.Click += comprar4_Click;
             // 
-            // button3
+            // comprar3
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(1099, 456);
-            button3.Name = "button3";
-            button3.Size = new Size(106, 29);
-            button3.TabIndex = 51;
-            button3.Text = "Comprar";
-            button3.UseVisualStyleBackColor = true;
+            comprar3.FlatStyle = FlatStyle.Flat;
+            comprar3.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar3.Location = new Point(1099, 456);
+            comprar3.Name = "comprar3";
+            comprar3.Size = new Size(106, 29);
+            comprar3.TabIndex = 51;
+            comprar3.Text = "Comprar";
+            comprar3.UseVisualStyleBackColor = true;
+            comprar3.Click += comprar3_Click;
             // 
-            // button9
+            // comprar2
             // 
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(779, 456);
-            button9.Name = "button9";
-            button9.Size = new Size(106, 29);
-            button9.TabIndex = 50;
-            button9.Text = "Comprar";
-            button9.UseVisualStyleBackColor = true;
+            comprar2.FlatStyle = FlatStyle.Flat;
+            comprar2.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar2.Location = new Point(779, 456);
+            comprar2.Name = "comprar2";
+            comprar2.Size = new Size(106, 29);
+            comprar2.TabIndex = 50;
+            comprar2.Text = "Comprar";
+            comprar2.UseVisualStyleBackColor = true;
+            comprar2.Click += comprar2_Click;
             // 
-            // button10
+            // comprar1
             // 
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(464, 456);
-            button10.Name = "button10";
-            button10.Size = new Size(106, 29);
-            button10.TabIndex = 49;
-            button10.Text = "Comprar";
-            button10.UseVisualStyleBackColor = true;
+            comprar1.FlatStyle = FlatStyle.Flat;
+            comprar1.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            comprar1.Location = new Point(464, 456);
+            comprar1.Name = "comprar1";
+            comprar1.Size = new Size(106, 29);
+            comprar1.TabIndex = 49;
+            comprar1.Text = "Comprar";
+            comprar1.UseVisualStyleBackColor = true;
+            comprar1.Click += comprar1_Click;
             // 
             // label8
             // 
@@ -472,23 +482,23 @@
             pictureBox7.TabIndex = 45;
             pictureBox7.TabStop = false;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Yu Gothic UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(464, 818);
-            label6.Name = "label6";
-            label6.Size = new Size(0, 25);
-            label6.TabIndex = 44;
-            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(733, 818);
+            label5.Location = new Point(464, 818);
             label5.Name = "label5";
             label5.Size = new Size(0, 25);
-            label5.TabIndex = 43;
+            label5.TabIndex = 44;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Yu Gothic UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(733, 818);
+            label6.Name = "label6";
+            label6.Size = new Size(0, 25);
+            label6.TabIndex = 43;
             // 
             // label4
             // 
@@ -562,23 +572,35 @@
             pictureBox3.TabIndex = 35;
             pictureBox3.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(385, 90);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(272, 291);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 34;
-            pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(699, 90);
+            pictureBox1.Location = new Point(385, 90);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(272, 291);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 33;
+            pictureBox1.TabIndex = 34;
             pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(699, 90);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(272, 291);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 33;
+            pictureBox2.TabStop = false;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(1571, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(49, 46);
+            button3.TabIndex = 66;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Productos
             // 
@@ -586,29 +608,30 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1910, 1026);
+            Controls.Add(button3);
             Controls.Add(lbl_stock);
-            Controls.Add(label13);
-            Controls.Add(label14);
-            Controls.Add(label15);
             Controls.Add(label16);
+            Controls.Add(label15);
+            Controls.Add(label14);
+            Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(button5);
-            Controls.Add(button6);
-            Controls.Add(button7);
-            Controls.Add(button8);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button9);
-            Controls.Add(button10);
+            Controls.Add(comprar8);
+            Controls.Add(comprar7);
+            Controls.Add(comprar6);
+            Controls.Add(comprar5);
+            Controls.Add(comprar4);
+            Controls.Add(comprar3);
+            Controls.Add(comprar2);
+            Controls.Add(comprar1);
             Controls.Add(label8);
             Controls.Add(pictureBox8);
             Controls.Add(label7);
             Controls.Add(pictureBox7);
-            Controls.Add(label6);
             Controls.Add(label5);
+            Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -617,8 +640,8 @@
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
+            Controls.Add(pictureBox2);
             Controls.Add(panel_menu);
             Name = "Productos";
             Text = "Productos";
@@ -631,8 +654,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -650,28 +673,28 @@
         private Button button2;
         private Button button1;
         private Label lbl_stock;
-        private Label label13;
-        private Label label14;
-        private Label label15;
         private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label13;
         private Label label12;
         private Label label11;
         private Label label10;
         private Label label9;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
-        private Button button4;
-        private Button button3;
-        private Button button9;
-        private Button button10;
+        private Button comprar8;
+        private Button comprar7;
+        private Button comprar6;
+        private Button comprar5;
+        private Button comprar4;
+        private Button comprar3;
+        private Button comprar2;
+        private Button comprar1;
         private Label label8;
         private PictureBox pictureBox8;
         private Label label7;
         private PictureBox pictureBox7;
-        private Label label6;
         private Label label5;
+        private Label label6;
         private Label label4;
         private Label label3;
         private Label label2;
@@ -680,10 +703,11 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
         private Button btn_verProductos;
         private Button button12;
         private Button button11;
+        private Button button3;
     }
 }

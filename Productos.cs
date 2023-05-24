@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,10 @@ namespace TiendaVirtualDeIndumentaria
 {
     public partial class Productos : Form
     {
+        Label[] labelsNombre = new Label[8];
+        Button[] botonComprar = new Button[8];
+        Label[] labelsPrecios = new Label[8];
+        PictureBox[] imagenes = new PictureBox[8];
         public Productos()
         {
             InitializeComponent();
@@ -54,8 +59,16 @@ namespace TiendaVirtualDeIndumentaria
                 button12.Hide();
 
             }
-            MessageBox.Show($"{EsAdmin}");
             ocultarBotonesComprar();
+            labelsNombre = new Label[] { label1, label2, label3, label4, label5, label6, label7, label8 };
+            botonComprar = new Button[] { comprar1, comprar2, comprar3, comprar4, comprar5, comprar6, comprar7, comprar8 };
+            labelsPrecios = new Label[] {label9,label10,label11,label12,
+                label13,label14,label15,label16,
+            };
+            imagenes = new PictureBox[]{
+                pictureBox1,pictureBox2,pictureBox3,pictureBox4
+                ,pictureBox5,pictureBox6,pictureBox7,pictureBox8
+            };
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -105,62 +118,115 @@ namespace TiendaVirtualDeIndumentaria
         }
         private void mostrarBotonesComprar()
         {
-            button10.Show();
-            button9.Show();
-            button3.Show();
-            button4.Show();
-            button8.Show();
-            button7.Show();
-            button6.Show();
-            button5.Show();
+            comprar1.Show();
+            comprar2.Show();
+            comprar3.Show();
+            comprar4.Show();
+            comprar5.Show();
+            comprar6.Show();
+            comprar7.Show();
+            comprar8.Show();
         }
 
         private void ocultarBotonesComprar()
         {
-            button10.Hide();
-            button9.Hide();
-            button3.Hide();
-            button4.Hide();
-            button8.Hide();
-            button7.Hide();
-            button6.Hide();
-            button5.Hide();
+            comprar1.Hide();
+            comprar2.Hide();
+            comprar3.Hide();
+            comprar4.Hide();
+            comprar5.Hide();
+            comprar6.Hide();
+            comprar7.Hide();
+            comprar8.Hide();
+        }
+
+        private void limpiarProductos(Label[] nombre, Label[] precio, PictureBox[] imegenes)
+        {
+            for (int i = 0; i < nombre.Length; i++)
+            {
+                nombre[i].Hide();
+                precio[i].Hide();
+                imegenes[i].Hide();
+            }
         }
 
         private async void FiltrarProductosPorTipo(string tipo)
         {
+            ocultarBotonesComprar();
+            limpiarProductos(labelsNombre, labelsPrecios, imagenes);
             FireBase producto = new FireBase();
-            Label[] labels;
-
             FirebaseResponse response = await producto.ObtenerCliente("productos");
             Dictionary<string, Producto> productos = JsonConvert.DeserializeObject<Dictionary<string, Producto>>(response.Body);
 
             if (productos != null)
             {
-                MessageBox.Show("Entro al if de si hay productos.");
+                int index = 0;
                 foreach (KeyValuePair<string, Producto> elemento in productos)
                 {
                     if (elemento.Value.Tipo == tipo)
                     {
-                        //metodo para cargar labels
-                        label1.Text = elemento.Value.Nombre;
-                        label9.Text = elemento.Value.Precio.ToString();
-                        pictureBox2.Image = Image.FromFile(elemento.Value.LinkImagen);
-                        // MOSTRAR BUZOS
+
+                        MuestraProducto.CargarNombre(labelsNombre, index, elemento.Value.Nombre);
+                        MuestraProducto.CargarPrecio(labelsPrecios, index, elemento.Value.Precio);
+                        MuestraProducto.CargarImagen(imagenes, index, elemento.Value.LinkImagen);
+                        botonComprar[index].Show();
+                        labelsNombre[index].Show();
+                        labelsPrecios[index].Show();
+                        imagenes[index].Show();
+                        index++;
                     }
+
                 }
             }
             else
             {
-                MessageBox.Show("Entro al else de no hay productos.");
+                
                 ocultarBotonesComprar();
                 label1.Hide();
                 label9.Hide();
-                pictureBox2.Hide();
+                pictureBox1.Hide();
             }
 
 
         }
+
+
+
+        private async void agregarProductoACarrito(string nombre)
+        {
+            ocultarBotonesComprar();
+            limpiarProductos(labelsNombre, labelsPrecios, imagenes);
+            ProductosEnCarrito productosEnCarrito = new ProductosEnCarrito();
+            FireBase producto = new FireBase();
+            FirebaseResponse response = await producto.ObtenerCliente("productos");
+            Dictionary<string, Producto> productos = JsonConvert.DeserializeObject<Dictionary<string, Producto>>(response.Body);
+
+            if (productos != null)
+            {
+                
+                foreach (KeyValuePair<string, Producto> elemento in productos)
+                {
+                    if (elemento.Value.Nombre == nombre)
+                    {
+
+                        productosEnCarrito.agregarACarrito(elemento.Value);
+
+                    }
+
+                }
+            }
+            else
+            {
+               
+                ocultarBotonesComprar();
+                label1.Hide();
+                label9.Hide();
+                pictureBox1.Hide();
+            }
+
+
+        }
+
 
         private void button11_Click(object sender, EventArgs e)
         {
@@ -174,6 +240,52 @@ namespace TiendaVirtualDeIndumentaria
             StockProducto formReponerStock = new StockProducto();
 
             formReponerStock.ShowDialog();
+        }
+
+        private void comprar1_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label1.Text);
+        }
+
+        private void comprar2_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label2.Text);
+        }
+
+        private void comprar3_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label3.Text);
+        }
+
+        private void comprar4_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label4.Text);
+        }
+
+        private void comprar5_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label5.Text);
+        }
+
+        private void comprar6_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label6.Text);
+        }
+
+        private void comprar7_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label7.Text);
+        }
+
+        private void comprar8_Click(object sender, EventArgs e)
+        {
+            agregarProductoACarrito(label8.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Carrito formCarrito = new Carrito();
+            formCarrito.ShowDialog();
         }
     }
 }
