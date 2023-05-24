@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             panel_menu = new Panel();
             button12 = new Button();
             button11 = new Button();
@@ -75,7 +74,6 @@
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            button3 = new Button();
             panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -590,25 +588,12 @@
             pictureBox2.TabIndex = 33;
             pictureBox2.TabStop = false;
             // 
-            // button3
-            // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(1571, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(49, 46);
-            button3.TabIndex = 66;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1910, 1026);
-            Controls.Add(button3);
             Controls.Add(lbl_stock);
             Controls.Add(label16);
             Controls.Add(label15);
@@ -708,6 +693,5 @@
         private Button btn_verProductos;
         private Button button12;
         private Button button11;
-        private Button button3;
     }
 }

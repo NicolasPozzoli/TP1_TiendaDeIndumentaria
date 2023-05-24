@@ -23,7 +23,7 @@ namespace TiendaVirtualDeIndumentaria
         Button[] botonComprar = new Button[8];
         Label[] labelsPrecios = new Label[8];
         PictureBox[] imagenes = new PictureBox[8];
-     //   ProductosEnCarrito productosEnCarrito;
+        //   ProductosEnCarrito productosEnCarrito;
         public Productos()
         {
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace TiendaVirtualDeIndumentaria
                 pictureBox1,pictureBox2,pictureBox3,pictureBox4
                 ,pictureBox5,pictureBox6,pictureBox7,pictureBox8
             };
-         //   productosEnCarrito = new ProductosEnCarrito();
+            //   productosEnCarrito = new ProductosEnCarrito();
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -182,7 +182,7 @@ namespace TiendaVirtualDeIndumentaria
             }
             else
             {
-                
+
                 ocultarBotonesComprar();
                 label1.Hide();
                 label9.Hide();
@@ -203,18 +203,19 @@ namespace TiendaVirtualDeIndumentaria
 
             if (productos != null)
             {
-                
+
                 foreach (KeyValuePair<string, Producto> elemento in productos)
                 {
                     if (elemento.Value.Nombre == nombre)
                     {
-                       stock= elemento.Value.Stock;
+                        stock = elemento.Value.Stock;
                         if (stock > 0)
                         {
                             await producto.ActualizarStockProducto(elemento.Value, elemento.Key, stock - 1);
                             MessageBox.Show("Producto Comprado.");
                         }
-                        else {
+                        else
+                        {
                             MessageBox.Show("NO HAY MAS STOCK DISPONIBLE!!");
                         }
                     }
@@ -223,7 +224,7 @@ namespace TiendaVirtualDeIndumentaria
             }
             else
             {
-               
+
                 ocultarBotonesComprar();
                 label1.Hide();
                 label9.Hide();
@@ -290,7 +291,7 @@ namespace TiendaVirtualDeIndumentaria
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
