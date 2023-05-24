@@ -23,6 +23,7 @@ namespace TiendaVirtualDeIndumentaria
         Button[] botonComprar = new Button[8];
         Label[] labelsPrecios = new Label[8];
         PictureBox[] imagenes = new PictureBox[8];
+     //   ProductosEnCarrito productosEnCarrito;
         public Productos()
         {
             InitializeComponent();
@@ -69,6 +70,7 @@ namespace TiendaVirtualDeIndumentaria
                 pictureBox1,pictureBox2,pictureBox3,pictureBox4
                 ,pictureBox5,pictureBox6,pictureBox7,pictureBox8
             };
+         //   productosEnCarrito = new ProductosEnCarrito();
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -192,11 +194,9 @@ namespace TiendaVirtualDeIndumentaria
 
 
 
-        private async void agregarProductoACarrito(string nombre)
+        private async void descontarStock(string nombre)
         {
-            ocultarBotonesComprar();
-            limpiarProductos(labelsNombre, labelsPrecios, imagenes);
-            ProductosEnCarrito productosEnCarrito = new ProductosEnCarrito();
+            int stock;
             FireBase producto = new FireBase();
             FirebaseResponse response = await producto.ObtenerCliente("productos");
             Dictionary<string, Producto> productos = JsonConvert.DeserializeObject<Dictionary<string, Producto>>(response.Body);
@@ -208,9 +208,15 @@ namespace TiendaVirtualDeIndumentaria
                 {
                     if (elemento.Value.Nombre == nombre)
                     {
-
-                        productosEnCarrito.agregarACarrito(elemento.Value);
-
+                       stock= elemento.Value.Stock;
+                        if (stock > 0)
+                        {
+                            await producto.ActualizarStockProducto(elemento.Value, elemento.Key, stock - 1);
+                            MessageBox.Show("Producto Comprado.");
+                        }
+                        else {
+                            MessageBox.Show("NO HAY MAS STOCK DISPONIBLE!!");
+                        }
                     }
 
                 }
@@ -244,48 +250,47 @@ namespace TiendaVirtualDeIndumentaria
 
         private void comprar1_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label1.Text);
+            descontarStock(label1.Text);
         }
 
         private void comprar2_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label2.Text);
+            descontarStock(label2.Text);
         }
 
         private void comprar3_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label3.Text);
+            descontarStock(label3.Text);
         }
 
         private void comprar4_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label4.Text);
+            descontarStock(label4.Text);
         }
 
         private void comprar5_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label5.Text);
+            descontarStock(label5.Text);
         }
 
         private void comprar6_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label6.Text);
+            descontarStock(label6.Text);
         }
 
         private void comprar7_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label7.Text);
+            descontarStock(label7.Text);
         }
 
         private void comprar8_Click(object sender, EventArgs e)
         {
-            agregarProductoACarrito(label8.Text);
+            descontarStock(label8.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Carrito formCarrito = new Carrito();
-            formCarrito.ShowDialog();
+           
         }
     }
 }

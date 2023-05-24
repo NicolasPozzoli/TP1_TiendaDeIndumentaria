@@ -53,4 +53,3 @@ C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\obj\Debug\net6.0-windo
 C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\obj\Debug\net6.0-windows\TiendaVirtualDeIndumentaria.StockProducto.resources
 C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\Logica.dll
 C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\Logica.pdb
-C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\obj\Debug\net6.0-windows\TiendaVirtualDeIndumentaria.Carrito.resources
