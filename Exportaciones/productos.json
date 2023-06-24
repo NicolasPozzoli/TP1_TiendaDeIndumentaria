@@ -1,0 +1,23 @@
+{
+  "Pantalon ind": {
+    "Nombre": "Pantalon ind",
+    "Tipo": "Pantalon",
+    "Precio": 3000.0,
+    "LinkImagen": "C:\\Users\\Nicolas\\source\\repos\\TiendaVirtualDeIndumentaria\\Resources\\PU767478-06-1.jpeg",
+    "Stock": 94
+  },
+  "Boxer Hombre": {
+    "Nombre": "Boxer Hombre",
+    "Tipo": "Ropa interior",
+    "Precio": 3000.0,
+    "LinkImagen": "C:\\Users\\Nicolas\\source\\repos\\TiendaVirtualDeIndumentaria\\Resources\\IMG_3276-scaled-uai-480x720.jpg",
+    "Stock": 17
+  },
+  "Buzo Just do it": {
+    "Nombre": "Buzo Just do it",
+    "Tipo": "Buzo",
+    "Precio": 3444.0,
+    "LinkImagen": "C:\\Users\\Nicolas\\source\\repos\\TiendaVirtualDeIndumentaria\\Resources\\NI_DB4952-063-1.jpeg",
+    "Stock": 0
+  }
+}

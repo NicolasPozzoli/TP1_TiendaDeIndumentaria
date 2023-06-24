@@ -16,8 +16,16 @@ namespace TiendaVirtualDeIndumentaria
         }
         public static void CargarNombre(Label[] labels, int index, string nombre)
         {
+            try 
+            {
+                labels[index].Text = nombre;
+            }
+            catch (Exception e) 
+            {
+                MessageBox.Show(e.Message);
+            }
                 
-                labels[index].Text = nombre;  
+
 
         }
         public static void CargarImagen(PictureBox[] imagen, int index, string pathImagen)

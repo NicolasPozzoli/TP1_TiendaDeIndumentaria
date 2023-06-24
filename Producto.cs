@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TiendaVirtualDeIndumentaria
 {
-    internal class Producto
+    public class Producto
     {
         private string _nombre;
         private decimal _precio;
         private string _linkImagen;
         private string _tipo;
         private int _stock;
+       
 
         public string Nombre
         {
@@ -68,6 +69,11 @@ namespace TiendaVirtualDeIndumentaria
             _tipo = tipo;
             _stock = stock;
         }
+
+
+
+
+
 
         public string Mostrar()
         {

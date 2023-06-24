@@ -33,6 +33,9 @@ namespace TiendaVirtualDeIndumentaria
                 return await Client.GetAsync(path);
             }
 
+
+
+
             public async Task<FirebaseResponse> IngresarCliente(Cliente client)
             {
 
@@ -58,6 +61,21 @@ namespace TiendaVirtualDeIndumentaria
                 }
             }
 
+
+        public async Task<FirebaseResponse> IngresarLog(Log log)
+        {
+
+            try
+            {
+                string IdGenerado = Guid.NewGuid().ToString("N");
+                return await Client.SetAsync("movimientos/" + IdGenerado, log);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<FirebaseResponse> ActualizarStockProducto(Producto product,string id,int stock)
         {
             try
@@ -70,6 +88,8 @@ namespace TiendaVirtualDeIndumentaria
                 throw new Exception(ex.Message);
             }
         }
+
+
         public async Task reponerStock(int stock)
         {
             //await Client.UpdateAsync($"productos\\{id}\\Stock", stock);

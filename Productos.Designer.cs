@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
             panel_menu = new Panel();
+            btn_verMovimientos = new Button();
             button12 = new Button();
             button11 = new Button();
             btn_verProductos = new Button();
@@ -74,6 +76,13 @@
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            button3 = new Button();
+            menuStrip1 = new MenuStrip();
+            exportaToolStripMenuItem = new ToolStripMenuItem();
+            exportarEnCSVToolStripMenuItem = new ToolStripMenuItem();
+            exportarEnJSONToolStripMenuItem = new ToolStripMenuItem();
+            exportarEnPDFToolStripMenuItem = new ToolStripMenuItem();
+            label_nombreUser = new Label();
             panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -83,11 +92,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel_menu
             // 
             panel_menu.BackColor = Color.FromArgb(11, 7, 17);
+            panel_menu.Controls.Add(btn_verMovimientos);
             panel_menu.Controls.Add(button12);
             panel_menu.Controls.Add(button11);
             panel_menu.Controls.Add(btn_verProductos);
@@ -101,10 +112,24 @@
             panel_menu.Controls.Add(btn_buzos);
             panel_menu.Controls.Add(panel_logo);
             panel_menu.Dock = DockStyle.Left;
-            panel_menu.Location = new Point(0, 0);
+            panel_menu.Location = new Point(0, 28);
             panel_menu.Name = "panel_menu";
-            panel_menu.Size = new Size(250, 1026);
+            panel_menu.Size = new Size(250, 998);
             panel_menu.TabIndex = 0;
+            // 
+            // btn_verMovimientos
+            // 
+            btn_verMovimientos.FlatAppearance.BorderSize = 0;
+            btn_verMovimientos.FlatAppearance.MouseDownBackColor = Color.AliceBlue;
+            btn_verMovimientos.FlatStyle = FlatStyle.Flat;
+            btn_verMovimientos.ForeColor = SystemColors.ButtonHighlight;
+            btn_verMovimientos.Location = new Point(-3, 618);
+            btn_verMovimientos.Name = "btn_verMovimientos";
+            btn_verMovimientos.Size = new Size(250, 84);
+            btn_verMovimientos.TabIndex = 12;
+            btn_verMovimientos.Text = "Ver movimientos ";
+            btn_verMovimientos.UseVisualStyleBackColor = true;
+            btn_verMovimientos.Click += btn_verMovimientos_Click_1;
             // 
             // button12
             // 
@@ -180,7 +205,7 @@
             // 
             label_admin.AutoSize = true;
             label_admin.ForeColor = SystemColors.AppWorkspace;
-            label_admin.Location = new Point(64, 647);
+            label_admin.Location = new Point(64, 569);
             label_admin.Name = "label_admin";
             label_admin.Size = new Size(119, 20);
             label_admin.TabIndex = 1;
@@ -588,12 +613,76 @@
             pictureBox2.TabIndex = 33;
             pictureBox2.TabStop = false;
             // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("SimSun-ExtB", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(1676, 25);
+            button3.Name = "button3";
+            button3.Size = new Size(54, 53);
+            button3.TabIndex = 66;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = SystemColors.ActiveCaption;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { exportaToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1910, 28);
+            menuStrip1.TabIndex = 67;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // exportaToolStripMenuItem
+            // 
+            exportaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { exportarEnCSVToolStripMenuItem, exportarEnJSONToolStripMenuItem, exportarEnPDFToolStripMenuItem });
+            exportaToolStripMenuItem.Name = "exportaToolStripMenuItem";
+            exportaToolStripMenuItem.Size = new Size(81, 24);
+            exportaToolStripMenuItem.Text = "Informes";
+            // 
+            // exportarEnCSVToolStripMenuItem
+            // 
+            exportarEnCSVToolStripMenuItem.Name = "exportarEnCSVToolStripMenuItem";
+            exportarEnCSVToolStripMenuItem.Size = new Size(207, 26);
+            exportarEnCSVToolStripMenuItem.Text = "Exportar en CSV";
+            exportarEnCSVToolStripMenuItem.Click += exportarEnCSVToolStripMenuItem_Click;
+            // 
+            // exportarEnJSONToolStripMenuItem
+            // 
+            exportarEnJSONToolStripMenuItem.Name = "exportarEnJSONToolStripMenuItem";
+            exportarEnJSONToolStripMenuItem.Size = new Size(207, 26);
+            exportarEnJSONToolStripMenuItem.Text = "Exportar en JSON";
+            exportarEnJSONToolStripMenuItem.Click += exportarEnJSONToolStripMenuItem_Click;
+            // 
+            // exportarEnPDFToolStripMenuItem
+            // 
+            exportarEnPDFToolStripMenuItem.Name = "exportarEnPDFToolStripMenuItem";
+            exportarEnPDFToolStripMenuItem.Size = new Size(207, 26);
+            exportarEnPDFToolStripMenuItem.Text = "Exportar en PDF";
+            exportarEnPDFToolStripMenuItem.Click += exportarEnPDFToolStripMenuItem_Click;
+            // 
+            // label_nombreUser
+            // 
+            label_nombreUser.AutoSize = true;
+            label_nombreUser.Font = new Font("Yu Gothic UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label_nombreUser.Location = new Point(267, 37);
+            label_nombreUser.Name = "label_nombreUser";
+            label_nombreUser.Size = new Size(215, 25);
+            label_nombreUser.TabIndex = 68;
+            label_nombreUser.Text = "Hola (nombre de usuario)";
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1910, 1026);
+            Controls.Add(label_nombreUser);
+            Controls.Add(button3);
             Controls.Add(lbl_stock);
             Controls.Add(label16);
             Controls.Add(label15);
@@ -628,6 +717,8 @@
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
             Controls.Add(panel_menu);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Productos";
             Text = "Productos";
             Load += Productos_Load;
@@ -641,6 +732,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -693,5 +786,13 @@
         private Button btn_verProductos;
         private Button button12;
         private Button button11;
+        private Button button3;
+        private Button btn_verMovimientos;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem exportaToolStripMenuItem;
+        private ToolStripMenuItem exportarEnCSVToolStripMenuItem;
+        private ToolStripMenuItem exportarEnJSONToolStripMenuItem;
+        private ToolStripMenuItem exportarEnPDFToolStripMenuItem;
+        private Label label_nombreUser;
     }
 }

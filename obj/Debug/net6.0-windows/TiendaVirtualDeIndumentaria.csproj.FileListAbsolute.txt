@@ -53,3 +53,17 @@ C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\obj\Debug\net6.0-windo
 C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\obj\Debug\net6.0-windows\TiendaVirtualDeIndumentaria.StockProducto.resources
 C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\Logica.dll
 C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\Logica.pdb
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\obj\Debug\net6.0-windows\TiendaVirtualDeIndumentaria.CarritoForm.resources
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\itextsharp.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\PdfSharp.Charting.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\PdfSharp.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\de\PdfSharp.Charting.resources.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\de\PdfSharp.resources.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\obj\Debug\net6.0-windows\TiendaVirtualDeIndumentaria.formLogs.resources
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\LiveCharts.Plus.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\LiveCharts.WinForms.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\Nicolas\source\repos\TiendaVirtualDeIndumentaria\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll

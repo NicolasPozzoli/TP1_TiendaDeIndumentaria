@@ -14,5 +14,7 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Bcl_Build Condition=" '$(PkgMicrosoft_Bcl_Build)' == '' ">C:\Users\Nicolas\.nuget\packages\microsoft.bcl.build\1.0.14</PkgMicrosoft_Bcl_Build>
+    <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\Nicolas\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
+    <PkgLiveCharts_WinForms Condition=" '$(PkgLiveCharts_WinForms)' == '' ">C:\Users\Nicolas\.nuget\packages\livecharts.winforms\0.9.7.1</PkgLiveCharts_WinForms>
   </PropertyGroup>
 </Project>

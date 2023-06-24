@@ -9,8 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Chart.js" Version="3.7.1" />
     <PackageReference Include="FireSharp" Version="2.0.4" />
     <PackageReference Include="Google.Cloud.Firestore" Version="3.2.0" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="LiveCharts.Plus" Version="1.0.0" />
+    <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.8.0" />
   </ItemGroup>
 
   <ItemGroup>

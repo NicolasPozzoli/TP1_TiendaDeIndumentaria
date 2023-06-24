@@ -6,11 +6,14 @@ using FireSharp.Extensions;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
 namespace TiendaVirtualDeIndumentaria
 {
     public partial class Form1 : Form
     {
+        public static string nombreUsuario;
+        public string NombreUsuario { get; private set; }
         Dictionary<string, string> clientes = new Dictionary<string, string>();
         public Form1()
         {
@@ -50,10 +53,12 @@ namespace TiendaVirtualDeIndumentaria
                             if (elemento.Value.EsAdmin == true)
                             {
                                 formUsuario.EsAdmin = true;
+                                formUsuario.NombreUsuario = usuario;
                                 formUsuario.Show();
                             }
                             else
-                            {
+                            {           
+                                formUsuario.NombreUsuario = usuario;
                                 formUsuario.Show();
                             }
                         }

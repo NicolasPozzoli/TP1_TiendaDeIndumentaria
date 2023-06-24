@@ -102,6 +102,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Chart.js": {
+              "target": "Package",
+              "version": "[3.7.1, )"
+            },
             "FireSharp": {
               "target": "Package",
               "version": "[2.0.4, )"
@@ -109,6 +113,34 @@
             "Google.Cloud.Firestore": {
               "target": "Package",
               "version": "[3.2.0, )"
+            },
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
+            "LiveCharts.Plus": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "LiveCharts.WinForms": {
+              "target": "Package",
+              "version": "[0.9.7.1, )"
+            },
+            "LiveCharts.Wpf": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
+            "PdfSharp": {
+              "target": "Package",
+              "version": "[1.50.5147, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
             }
           },
           "imports": [
