@@ -20,15 +20,17 @@ namespace TiendaVirtualDeIndumentaria
 
         }
 
-        public void ingresarProductoCarrito(Producto producto) 
+        public bool ingresarProductoCarrito(Producto producto) 
         {
             string claveProducto = producto.Nombre;
             try {
                 productos.Add(claveProducto, producto);
+                return true;
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
+            return false;
         }
 
         public Dictionary<string,Producto> getProductos() {  return productos; }

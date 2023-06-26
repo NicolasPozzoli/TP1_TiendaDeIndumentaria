@@ -10,6 +10,7 @@ namespace TiendaVirtualDeIndumentaria
 {
     public class ManejoDeProductos
     {
+        public static event Action<string, bool> StockVerificado;
         public static void mostrarBotonesComprar(Button[] botonComprar)
         {
             foreach (Button boton in botonComprar)
@@ -59,18 +60,21 @@ namespace TiendaVirtualDeIndumentaria
                         labelsPrecios[index].Show();
                         imagenes[index].Show();
                         index++;
+                        
                     }
                 }
             }
             else
             {
                 ocultarBotonesComprar(botonComprar);
-                // Ocultar otros controles si es necesario
+               
             }
+            
         }
 
-        public async static void VerificarStock(string nombre)
+        public async Task<bool> VerificarStock(string nombre)
         {
+            bool retorno=false;
             int stock;
             FireBase producto = new FireBase();
             FirebaseResponse response = await producto.ObtenerCliente("productos");
@@ -84,17 +88,38 @@ namespace TiendaVirtualDeIndumentaria
                     {
                         stock = elemento.Value.Stock;
                         if (stock > 0)
-                        { 
+                        {         
                             MessageBox.Show("Este producto tiene stock disponible");
+                            StockVerificado?.Invoke(nombre, true);
+                            return true;
                         }
                         else
                         {
                             MessageBox.Show("ESTE PRODUCTO YA NO TIENE STOCK!!");
+                            StockVerificado?.Invoke(nombre, false);
                         }
                     }
                 }
             }
+            return retorno;
           
+        }
+
+        public static void SubscribirseAlEvento()
+        {
+            StockVerificado += ManejoDeProductos_StockVerificado;
+        }
+
+        private static void ManejoDeProductos_StockVerificado(string nombre, bool stockDisponible)
+        {
+            if (stockDisponible)
+            {
+                MessageBox.Show($"El producto {nombre} tiene stock disponible.");
+            }
+            else
+            {
+                MessageBox.Show($"El producto {nombre} no tiene stock disponible.");
+            }
         }
 
 

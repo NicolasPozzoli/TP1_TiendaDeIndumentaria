@@ -12,8 +12,11 @@ using System.IO;
 
 namespace TiendaVirtualDeIndumentaria
 {
-    internal class InformesGenerados
+
+    public delegate void DelegadoExportar(Dictionary<string, Producto> productos, string nombreArchivo);
+    public class InformesGenerados
     {
+        public static event DelegadoExportar InformeExportado;
         public static void ExportarCSV(Dictionary<string, Producto> productos, string nombreArchivo)
         {
             string rutaArchivo = Path.Combine("C:\\Users\\Nicolas\\source\\repos\\TiendaVirtualDeIndumentaria\\Exportaciones", nombreArchivo);
@@ -27,6 +30,7 @@ namespace TiendaVirtualDeIndumentaria
                     writer.WriteLine(linea);
                 }
             }
+            InformeExportado?.Invoke(productos, nombreArchivo);
         }
 
         public static void ExportarJSON(Dictionary<string, Producto> productos, string nombreArchivo)
@@ -35,7 +39,7 @@ namespace TiendaVirtualDeIndumentaria
             string rutaArchivo = Path.Combine("C:\\Users\\Nicolas\\source\\repos\\TiendaVirtualDeIndumentaria\\Exportaciones", nombreArchivo);
             string json = JsonConvert.SerializeObject(productos, Formatting.Indented);
 
-            
+            InformeExportado?.Invoke(productos, nombreArchivo);
             File.WriteAllText(rutaArchivo, json);
         }
 
@@ -69,7 +73,9 @@ namespace TiendaVirtualDeIndumentaria
                     doc.Add(tablaProductos);
                     doc.Close();
                 }
+
             }
+            InformeExportado?.Invoke(productos, nombreArchivo);
         }
 
     }

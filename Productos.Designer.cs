@@ -643,25 +643,26 @@
             exportaToolStripMenuItem.Name = "exportaToolStripMenuItem";
             exportaToolStripMenuItem.Size = new Size(81, 24);
             exportaToolStripMenuItem.Text = "Informes";
+            exportaToolStripMenuItem.Click += exportaToolStripMenuItem_Click;
             // 
             // exportarEnCSVToolStripMenuItem
             // 
             exportarEnCSVToolStripMenuItem.Name = "exportarEnCSVToolStripMenuItem";
-            exportarEnCSVToolStripMenuItem.Size = new Size(207, 26);
+            exportarEnCSVToolStripMenuItem.Size = new Size(224, 26);
             exportarEnCSVToolStripMenuItem.Text = "Exportar en CSV";
             exportarEnCSVToolStripMenuItem.Click += exportarEnCSVToolStripMenuItem_Click;
             // 
             // exportarEnJSONToolStripMenuItem
             // 
             exportarEnJSONToolStripMenuItem.Name = "exportarEnJSONToolStripMenuItem";
-            exportarEnJSONToolStripMenuItem.Size = new Size(207, 26);
+            exportarEnJSONToolStripMenuItem.Size = new Size(224, 26);
             exportarEnJSONToolStripMenuItem.Text = "Exportar en JSON";
             exportarEnJSONToolStripMenuItem.Click += exportarEnJSONToolStripMenuItem_Click;
             // 
             // exportarEnPDFToolStripMenuItem
             // 
             exportarEnPDFToolStripMenuItem.Name = "exportarEnPDFToolStripMenuItem";
-            exportarEnPDFToolStripMenuItem.Size = new Size(207, 26);
+            exportarEnPDFToolStripMenuItem.Size = new Size(224, 26);
             exportarEnPDFToolStripMenuItem.Text = "Exportar en PDF";
             exportarEnPDFToolStripMenuItem.Click += exportarEnPDFToolStripMenuItem_Click;
             // 

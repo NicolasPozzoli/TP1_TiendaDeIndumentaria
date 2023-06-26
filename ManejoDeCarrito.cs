@@ -8,40 +8,42 @@ using System.Threading.Tasks;
 
 namespace TiendaVirtualDeIndumentaria
 {
-    public static class ManejoDeCarrito
-    {
-        public async static void ComprarProducto(string nombre, Carrito carrito)
+        public static class ManejoDeCarrito
         {
-            int stock;
-            FireBase producto = new FireBase();
-            FirebaseResponse response = await producto.ObtenerCliente("productos");
-            Dictionary<string, Producto> productos = JsonConvert.DeserializeObject<Dictionary<string, Producto>>(response.Body);
-
-            if (productos != null)
+            public async static void ComprarProducto(string nombre, Carrito carrito)
             {
-                foreach (KeyValuePair<string, Producto> elemento in productos)
+                ManejoDeProductos manejoDeProductos = new ManejoDeProductos();
+                bool stockVerificado;
+                FireBase producto = new FireBase();
+                FirebaseResponse response = await producto.ObtenerCliente("productos");
+                Dictionary<string, Producto> productos = JsonConvert.DeserializeObject<Dictionary<string, Producto>>(response.Body);
+
+                if (productos != null)
                 {
-                    if (elemento.Value.Nombre == nombre)
+                    foreach (KeyValuePair<string, Producto> elemento in productos)
                     {
-                        stock = elemento.Value.Stock;
-                        if (stock > 0)
+                        if (elemento.Value.Nombre == nombre)
                         {
-                            await producto.ActualizarStockProducto(elemento.Value, elemento.Key, stock - 1);
-                            carrito.ingresarProductoCarrito(elemento.Value);
-                            MessageBox.Show("Agregado al carrito.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("NO HAY MAS STOCK DISPONIBLE!!");
+                            stockVerificado= await manejoDeProductos.VerificarStock(nombre);
+                            if (stockVerificado)
+                            {
+                                await producto.ActualizarStockProducto(elemento.Value, elemento.Key, elemento.Value.Stock - 1);
+                                carrito.ingresarProductoCarrito(elemento.Value);
+                                ManejoDeProductos.SubscribirseAlEvento();
+                                MessageBox.Show("Agregado al carrito.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("NO HAY MAS STOCK DISPONIBLE!!");
+                            }
                         }
                     }
                 }
+                else
+                {
+                    // Tratar el caso en que no hay productos disponibles
+                }
             }
-            else
-            {
-                // Tratar el caso en que no hay productos disponibles
-            }
-        }
     
-}
+    }
 }

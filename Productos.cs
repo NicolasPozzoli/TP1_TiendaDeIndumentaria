@@ -283,10 +283,14 @@ namespace TiendaVirtualDeIndumentaria
 
         private void exportarEnCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            InformesGenerados.InformeExportado += InformeExportadoAviso;
+
             Dictionary<string, Producto> productos = carrito.getProductos();
             string nombreArchivo = "productos.csv";
+
             InformesGenerados.ExportarCSV(productos, nombreArchivo);
-            MessageBox.Show("Informe CSV generado correctamente.");
+
+           // MessageBox.Show("Informe CSV generado correctamente.");
         }
 
         private void exportarEnJSONToolStripMenuItem_Click(object sender, EventArgs e)
@@ -294,6 +298,7 @@ namespace TiendaVirtualDeIndumentaria
             Dictionary<string, Producto> productos = carrito.getProductos();
             string nombreArchivo = "productos.json";
             InformesGenerados.ExportarJSON(productos, nombreArchivo);
+            InformesGenerados.InformeExportado += InformeExportadoAviso;
             MessageBox.Show("Informe JSON generado correctamente.");
         }
 
@@ -303,7 +308,14 @@ namespace TiendaVirtualDeIndumentaria
 
             string nombreArchivo = "productos.pdf";
             InformesGenerados.ExportarPDF(productos, nombreArchivo);
+            InformesGenerados.InformeExportado += InformeExportadoAviso;
             MessageBox.Show("El archivo PDF ha sido generado correctamente.", "Exportación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void InformeExportadoAviso(Dictionary<string, Producto> productos, string nombreArchivo)
+        {
+            MessageBox.Show($"Informe exportado: {nombreArchivo}");
+            
         }
 
         private void btn_verMovimientos_Click_1(object sender, EventArgs e)
@@ -311,6 +323,11 @@ namespace TiendaVirtualDeIndumentaria
             formLogs formMovimientos = new formLogs();
 
             formMovimientos.ShowDialog();
+        }
+
+        private void exportaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
